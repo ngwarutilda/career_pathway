@@ -12,6 +12,7 @@ const recommendationRoutes = require('./routes/recommendationRoutes');
 const careerRoutes = require('./routes/careerRoutes');
 const concoursRoutes = require('./routes/concoursRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const chatRoutes = require('./routes/chatRoutes');
 
 connectDB();
 
@@ -34,6 +35,8 @@ app.use('/api/recommendations', recommendationRoutes);
 app.use('/api/careers', careerRoutes);
 app.use('/api/concours', concoursRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/chat', chatRoutes);
+console.log('Chat route registered!');
 
 app.get('/api', (req, res) => {
   res.json({ message: 'Career Pathway API is running ✅' });
