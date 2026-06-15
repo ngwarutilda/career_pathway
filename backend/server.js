@@ -20,7 +20,7 @@ const app = express();
 
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
-    ? 'https://your-vercel-app.vercel.app'
+    ? 'https://career-pathway-rg62.vercel.app/'
     : 'http://localhost:3000',
   credentials: true,
 }));
