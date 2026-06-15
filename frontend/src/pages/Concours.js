@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Search } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
 import DashSidebar from "../components/DashSidebar";
 import DashTopbar from "../components/DashTopbar";
 import { getAllConcours } from "../api/concours";
@@ -27,7 +26,7 @@ const Concours = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [searchText, setSearchText] = useState("");
 
-  const fetchConcours = async () => {
+  const fetchConcours = useCallback(async () => {
     setLoading(true);
     try {
       const filters = {};
@@ -46,9 +45,9 @@ const Concours = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedCategory, searchText]);
 
-  useEffect(() => { fetchConcours(); }, []);
+  useEffect(() => { fetchConcours(); }, [fetchConcours]);
 
   const grouped = concours.reduce((acc, item) => {
     if (!acc[item.category]) acc[item.category] = [];
@@ -105,7 +104,6 @@ const Concours = () => {
         ) : (
           Object.entries(grouped).map(([category, items]) => (
             <div key={category} className="cp-co-category">
-
               <div className="cp-co-category-title">
                 <div className="cp-co-category-icon">
                   {CATEGORY_EMOJI[category] || "📋"}
@@ -119,7 +117,6 @@ const Concours = () => {
               <div className="cp-co-grid">
                 {items.map((e) => (
                   <article key={e._id} className="cp-co-card">
-
                     <div className="cp-co-card-header">
                       <div className="cp-co-card-icon">
                         {CATEGORY_EMOJI[e.category] || "📋"}
@@ -160,7 +157,6 @@ const Concours = () => {
                         </ul>
                       </div>
                     )}
-
                   </article>
                 ))}
               </div>
