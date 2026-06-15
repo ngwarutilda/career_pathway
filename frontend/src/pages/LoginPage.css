@@ -1,0 +1,287 @@
+/* =========================================================
+   Career Pathway — Auth (Login & Signup)
+   ========================================================= */
+:root {
+  --cp-primary: #3F4C8A;
+  --cp-dark: #2F3E75;
+  --cp-orange: #F4A000;
+  --cp-orange-hover: #d98c00;
+  --cp-text: #1f2547;
+}
+
+.cp-auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a2a5e 0%, #2F3E75 50%, #3a4f8a 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background blobs like landing page hero */
+.cp-auth-page::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(244, 160, 0, 0.08);
+  top: -150px;
+  right: -150px;
+  pointer-events: none;
+}
+
+.cp-auth-page::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  bottom: -100px;
+  left: -100px;
+  pointer-events: none;
+}
+
+.cp-auth-wrapper {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card */
+.cp-auth-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.3);
+}
+
+/* Top bar */
+.cp-auth-topbar {
+  background: #f8f9ff;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.cp-auth-brand {
+  color: var(--cp-dark);
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.cp-auth-switch {
+  background: var(--cp-orange);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.cp-auth-switch:hover {
+  background: var(--cp-orange-hover);
+  transform: translateY(-1px);
+}
+
+/* Body */
+.cp-auth-body {
+  padding: 36px 36px 44px;
+}
+
+.cp-auth-title {
+  color: var(--cp-dark);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.cp-auth-subtitle {
+  text-align: center;
+  color: #5b6485;
+  font-size: 0.95rem;
+  margin: 0 0 28px;
+}
+
+/* Form */
+.cp-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cp-auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cp-auth-field label {
+  color: var(--cp-dark);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.cp-auth-field input {
+  background: #f8f9ff;
+  border: 1.5px solid #e6e9f5;
+  border-radius: 10px;
+  padding: 13px 14px;
+  font-size: 0.98rem;
+  color: var(--cp-text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cp-auth-field input::placeholder {
+  color: #b7bbcc;
+}
+
+.cp-auth-field input:focus {
+  border-color: var(--cp-dark);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(47, 62, 117, 0.12);
+}
+
+/* Password eye toggle */
+.cp-auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cp-auth-input-wrap input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.cp-auth-eye {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.cp-auth-eye:hover {
+  color: var(--cp-dark);
+}
+
+/* Forgot password */
+.cp-auth-forgot {
+  align-self: flex-end;
+  color: var(--cp-dark);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: -6px;
+  opacity: 0.7;
+}
+
+.cp-auth-forgot:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Submit button */
+.cp-auth-submit {
+  margin-top: 6px;
+  background: var(--cp-dark);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  letter-spacing: 0.3px;
+}
+
+.cp-auth-submit:hover {
+  background: #25305c;
+  transform: translateY(-1px);
+}
+
+.cp-auth-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Orange accent line at bottom of submit */
+.cp-auth-submit::after {
+  content: "";
+}
+
+/* Bottom toggle text */
+.cp-auth-toggle-text {
+  text-align: center;
+  margin: 4px 0 0;
+  color: #5b6485;
+  font-size: 0.92rem;
+}
+
+.cp-auth-toggle-link {
+  background: none;
+  border: none;
+  color: var(--cp-orange);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+}
+
+.cp-auth-toggle-link:hover {
+  text-decoration: underline;
+}
+
+/* Divider */
+.cp-auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b7bbcc;
+  font-size: 0.85rem;
+}
+
+.cp-auth-divider::before,
+.cp-auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e6e9f5;
+}
+
+/* Responsive */
+@media (max-width: 540px) {
+  .cp-auth-page { padding: 16px 12px; }
+  .cp-auth-body { padding: 28px 22px 36px; }
+  .cp-auth-topbar { padding: 14px 20px; }
+  .cp-auth-switch { padding: 7px 14px; font-size: 0.88rem; }
+  .cp-auth-title { font-size: 1.4rem; }
+}

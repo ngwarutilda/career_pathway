@@ -1,0 +1,253 @@
+/* =========================================================
+   Career Pathway — Careers Page
+   ========================================================= */
+
+.cp-cr-header {
+  margin-bottom: 4px;
+}
+
+.cp-cr-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--cp-dark, #2F3E75);
+}
+
+.cp-cr-header p {
+  margin: 0;
+  color: #5b6485;
+  font-size: 0.95rem;
+}
+
+/* Filters */
+.cp-cr-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #eef0f7;
+}
+
+.cp-cr-select {
+  background: #f8f9ff;
+  border: 1.5px solid #e6e9f5;
+  border-radius: 8px;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 180px;
+  transition: border-color 0.2s;
+}
+
+.cp-cr-select:focus-within {
+  border-color: var(--cp-dark, #2F3E75);
+}
+
+.cp-cr-select select,
+.cp-cr-select input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.88rem;
+  color: var(--cp-dark, #2F3E75);
+  flex: 1;
+  font-family: inherit;
+}
+
+.cp-cr-select input::placeholder {
+  color: #b7bbcc;
+}
+
+.cp-cr-search-btn {
+  background: var(--cp-dark, #2F3E75);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.cp-cr-search-btn:hover {
+  background: #25305c;
+  transform: translateY(-1px);
+}
+
+.cp-cr-reset-btn {
+  background: none;
+  border: 1.5px solid var(--cp-orange, #F4A000);
+  color: var(--cp-orange, #F4A000);
+  border-radius: 8px;
+  padding: 9px 18px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.cp-cr-reset-btn:hover {
+  background: var(--cp-orange, #F4A000);
+  color: #fff;
+}
+
+/* Career grid */
+.cp-cr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Career card */
+.cp-cr-card {
+  background: #fff;
+  border: 1px solid #eef0f7;
+  border-radius: 16px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.cp-cr-card:hover {
+  box-shadow: 0 6px 20px rgba(47,62,117,0.1);
+  transform: translateY(-3px);
+}
+
+/* Card top row */
+.cp-cr-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.cp-cr-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eef1fb, #dde2f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.cp-cr-card-top-text {
+  flex: 1;
+}
+
+.cp-cr-card h3 {
+  margin: 0 0 4px;
+  color: var(--cp-dark, #2F3E75);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cp-cr-field-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(244,160,0,0.12);
+  color: #92400e;
+}
+
+/* Description */
+.cp-cr-desc {
+  margin: 0;
+  color: #5b6485;
+  font-size: 0.87rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Meta info */
+.cp-cr-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cp-cr-meta-item {
+  font-size: 0.82rem;
+  color: #5b6485;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Related programs tags */
+.cp-cr-programs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.cp-cr-program-tag {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: #eef1fb;
+  color: var(--cp-dark, #2F3E75);
+  font-weight: 500;
+  border: 1px solid #dde2f5;
+}
+
+/* Card footer */
+.cp-cr-card-footer {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #eef0f7;
+}
+
+.cp-cr-related {
+  color: var(--cp-orange, #F4A000);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s;
+}
+
+.cp-cr-related:hover {
+  gap: 8px;
+}
+
+/* Empty / loading */
+.cp-cr-empty {
+  padding: 40px 16px;
+  text-align: center;
+  color: #5b6485;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eef0f7;
+}
+
+@media (max-width: 960px) {
+  .cp-cr-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .cp-cr-filters { flex-direction: column; }
+  .cp-cr-select { min-width: 100%; }
+}

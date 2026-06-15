@@ -1,0 +1,254 @@
+/* =========================================================
+   Career Pathway — Program Details Page
+   ========================================================= */
+
+/* Back button */
+.cp-pd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #5b6485;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 4px;
+  transition: color 0.2s;
+}
+
+.cp-pd-back:hover {
+  color: var(--cp-dark, #2F3E75);
+}
+
+/* Hero banner */
+.cp-pd-hero {
+  background: linear-gradient(135deg, #2F3E75 0%, #3a4f8a 100%);
+  border-radius: 16px;
+  padding: 28px 32px;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cp-pd-hero-left {
+  flex: 1;
+}
+
+.cp-pd-hero h1 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.cp-pd-hero-uni {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cp-pd-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cp-pd-hero-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.cp-pd-hero-badge-orange {
+  background: rgba(244,160,0,0.25);
+  border-color: rgba(244,160,0,0.4);
+  color: #ffd166;
+}
+
+.cp-pd-hero-icon {
+  font-size: 3.5rem;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* Description card */
+.cp-pd-desc {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #eef0f7;
+}
+
+.cp-pd-desc h2 {
+  margin: 0 0 10px;
+  color: var(--cp-dark, #2F3E75);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cp-pd-desc p {
+  margin: 0;
+  color: #5b6485;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* Grid layout */
+.cp-pd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Info cards */
+.cp-pd-card {
+  background: #fff;
+  border: 1px solid #eef0f7;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.cp-pd-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  color: var(--cp-dark, #2F3E75);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.cp-pd-card-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eef0f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cp-pd-card-icon-orange {
+  background: rgba(244,160,0,0.12);
+}
+
+/* Subject tags */
+.cp-pd-sub-section {
+  margin-bottom: 16px;
+}
+
+.cp-pd-sub-section:last-child {
+  margin-bottom: 0;
+}
+
+.cp-pd-sub-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #5b6485;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+}
+
+.cp-pd-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cp-pd-tag {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #eef1fb;
+  color: var(--cp-dark, #2F3E75);
+  font-weight: 500;
+  border: 1px solid #dde2f5;
+}
+
+.cp-pd-tag-orange {
+  background: rgba(244,160,0,0.1);
+  color: #92400e;
+  border-color: rgba(244,160,0,0.2);
+}
+
+/* Admission text */
+.cp-pd-admission-text {
+  font-size: 0.9rem;
+  color: #5b6485;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Related careers */
+.cp-pd-careers-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #eef0f7;
+}
+
+.cp-pd-careers-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  color: var(--cp-dark, #2F3E75);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.cp-pd-careers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cp-pd-career-chip {
+  background: #f8f9ff;
+  border: 1px solid #eef0f7;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--cp-dark, #2F3E75);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.cp-pd-career-chip:hover {
+  box-shadow: 0 3px 10px rgba(47,62,117,0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 960px) {
+  .cp-pd-grid { grid-template-columns: 1fr; }
+  .cp-pd-careers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .cp-pd-hero { flex-direction: column; }
+  .cp-pd-hero-icon { display: none; }
+  .cp-pd-careers-grid { grid-template-columns: 1fr; }
+}

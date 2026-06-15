@@ -1,0 +1,237 @@
+/* =========================================================
+   Career Pathway — Profile & Settings page
+   ========================================================= */
+
+.cp-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.cp-profile-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--cp-text, #1f2547);
+}
+.cp-profile-header p {
+  margin: 4px 0 0;
+  color: #5b6485;
+  font-size: 0.95rem;
+}
+
+/* Tabs */
+.cp-profile-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #e3e6ef;
+  margin-bottom: 8px;
+}
+.cp-profile-tab {
+  background: none;
+  border: none;
+  padding: 12px 18px;
+  font-size: 0.98rem;
+  color: #5b6485;
+  cursor: pointer;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.cp-profile-tab:hover { color: var(--cp-text, #1f2547); }
+.cp-profile-tab.is-active {
+  color: var(--cp-dark, #2F3E75);
+  border-bottom-color: var(--cp-orange, #F4A000);
+}
+
+/* Card */
+.cp-profile-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Avatar block */
+.cp-profile-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cp-profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F4A000, #ff8a3d);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+.cp-profile-avatar img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.cp-profile-avatar-info h2 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+  color: var(--cp-text, #1f2547);
+}
+.cp-profile-avatar-info p {
+  margin: 0;
+  color: #5b6485;
+  font-size: 0.9rem;
+}
+.cp-profile-upload {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--cp-dark, #2F3E75);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  border: none;
+}
+.cp-profile-upload:hover { opacity: 0.92; }
+.cp-profile-upload input { display: none; }
+
+/* Grid form */
+.cp-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.cp-profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cp-profile-field.full { grid-column: 1 / -1; }
+.cp-profile-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1f2547;
+}
+.cp-profile-field input,
+.cp-profile-field select,
+.cp-profile-field textarea {
+  border: 1px solid #e3e6ef;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  color: #1f2547;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.cp-profile-field input:focus,
+.cp-profile-field select:focus,
+.cp-profile-field textarea:focus {
+  border-color: var(--cp-orange, #F4A000);
+}
+.cp-profile-field textarea { min-height: 90px; resize: vertical; }
+
+/* Actions */
+.cp-profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #eceef5;
+  padding-top: 18px;
+}
+.cp-profile-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s;
+}
+.cp-profile-btn.primary {
+  background: var(--cp-orange, #F4A000);
+  color: #fff;
+}
+.cp-profile-btn.primary:hover { opacity: 0.92; }
+.cp-profile-btn.ghost {
+  background: #f3f4f8;
+  color: #1f2547;
+}
+.cp-profile-btn.ghost:hover { background: #e8eaf3; }
+
+/* Settings rows */
+.cp-settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #eceef5;
+}
+.cp-settings-row:last-child { border-bottom: none; }
+.cp-settings-row-info h3 {
+  margin: 0 0 4px;
+  font-size: 0.98rem;
+  color: #1f2547;
+}
+.cp-settings-row-info p {
+  margin: 0;
+  color: #5b6485;
+  font-size: 0.85rem;
+}
+
+/* Toggle */
+.cp-toggle {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  background: #d4d7e3;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+  flex-shrink: 0;
+}
+.cp-toggle::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  top: 3px;
+  left: 3px;
+  transition: left 0.2s;
+}
+.cp-toggle.on { background: var(--cp-orange, #F4A000); }
+.cp-toggle.on::after { left: 21px; }
+
+.cp-danger-btn {
+  background: #fff0f0;
+  color: #c0392b;
+  border: 1px solid #f5d5d2;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cp-danger-btn:hover { background: #ffe5e3; }
+
+@media (max-width: 720px) {
+  .cp-profile-grid { grid-template-columns: 1fr; }
+  .cp-profile-card { padding: 20px; }
+}

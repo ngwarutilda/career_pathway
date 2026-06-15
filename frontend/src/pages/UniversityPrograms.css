@@ -1,0 +1,258 @@
+/* =========================================================
+   Career Pathway — University Programs Page
+   ========================================================= */
+
+.cp-up-header {
+  margin-bottom: 4px;
+}
+
+.cp-up-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--cp-dark, #2F3E75);
+}
+
+.cp-up-header p {
+  margin: 0;
+  color: #5b6485;
+  font-size: 0.95rem;
+}
+
+/* Toggle buttons */
+.cp-up-toggle {
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #eef0f7;
+  width: fit-content;
+}
+
+.cp-up-toggle-btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  color: #5b6485;
+}
+
+.cp-up-toggle-btn.active {
+  background: var(--cp-dark, #2F3E75);
+  color: #fff;
+}
+
+/* Filters */
+.cp-up-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #eef0f7;
+}
+
+.cp-up-select {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8f9ff;
+  border: 1.5px solid #e6e9f5;
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: var(--cp-dark, #2F3E75);
+  font-size: 0.88rem;
+  transition: border-color 0.2s;
+}
+
+.cp-up-select:focus-within {
+  border-color: var(--cp-dark, #2F3E75);
+}
+
+.cp-up-select select {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 0.88rem;
+  color: var(--cp-dark, #2F3E75);
+  cursor: pointer;
+}
+
+.cp-up-search-btn {
+  background: var(--cp-dark, #2F3E75);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.cp-up-search-btn:hover {
+  background: #25305c;
+  transform: translateY(-1px);
+}
+
+/* University section */
+.cp-up-uni {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  border: 1px solid #eef0f7;
+}
+
+.cp-up-uni-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.cp-up-uni-title h2 {
+  margin: 0;
+  color: var(--cp-dark, #2F3E75);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.cp-up-uni-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #5b6485;
+}
+
+.cp-up-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.cp-up-badge-public {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.cp-up-badge-private {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Program rows */
+.cp-up-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f8f9ff;
+  border: 1px solid #eef0f7;
+  margin-bottom: 8px;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.cp-up-row:hover {
+  box-shadow: 0 3px 12px rgba(47,62,117,0.08);
+  transform: translateY(-1px);
+}
+
+.cp-up-row:last-child {
+  margin-bottom: 0;
+}
+
+.cp-up-cell {
+  font-weight: 600;
+  color: var(--cp-dark, #2F3E75);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.cp-up-cell-subjects {
+  font-size: 0.82rem;
+  color: #5b6485;
+  font-weight: 400;
+  flex: 1;
+  text-align: center;
+}
+
+.cp-up-cell-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cp-up-view {
+  background: var(--cp-orange, #F4A000);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.cp-up-view:hover {
+  background: var(--cp-orange-hover, #d98c00);
+}
+
+.cp-up-arrow {
+  background: #fff;
+  border: 1.5px solid #e6e9f5;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--cp-dark, #2F3E75);
+  transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.cp-up-arrow:hover {
+  background: #eef0f7;
+  border-color: var(--cp-dark, #2F3E75);
+}
+
+/* Empty / loading */
+.cp-up-empty {
+  padding: 40px 16px;
+  text-align: center;
+  color: #5b6485;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #eef0f7;
+}
+
+@media (max-width: 720px) {
+  .cp-up-row { flex-direction: column; align-items: flex-start; }
+  .cp-up-cell-subjects { text-align: left; }
+  .cp-up-toggle { width: 100%; }
+  .cp-up-toggle-btn { flex: 1; text-align: center; }
+}
