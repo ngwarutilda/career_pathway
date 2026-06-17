@@ -1,59 +1,55 @@
-const Program = require('../models/Program');
-
-/**
- * Score a single program against the student's profile.
- * Higher score = stronger match.
- */
 const scoreProgram = (program, profile) => {
   let score = 0;
 
-  const subjects = (profile.favoriteSubjects || []).map(s => s.toLowerCase());
-  const fields   = (profile.preferredFields  || []).map(f => f.toLowerCase());
-  const interests = (profile.interests       || []).map(i => i.toLowerCase());
+  const subjects = profile.favoriteSubjects || [];
+  const fields = profile.preferredFields || [];
+  const interests = profile.interests || [];
+  const stream = profile.stream || "";
 
-  // +3 for each required subject the student has
-  program.requiredSubjects.forEach((subject) => {
-    if (subjects.includes(subject.toLowerCase())) score += 3;
+  // Stream must match — if stream is set and does not match, score 0
+  if (stream && program.stream && program.stream !== stream) {
+    return 0;
+  }
+
+  // Required subjects match — +3 per match
+  program.requiredSubjects?.forEach((subject) => {
+    if (subjects.includes(subject)) score += 3;
   });
 
-  // +2 for each preferred subject match
-  program.preferredSubjects.forEach((subject) => {
-    if (subjects.includes(subject.toLowerCase())) score += 2;
+  // Preferred subjects match — +2 per match
+  program.preferredSubjects?.forEach((subject) => {
+    if (subjects.includes(subject)) score += 2;
   });
 
-  // +4 for each related field match (strongest signal)
-  program.relatedFields.forEach((field) => {
-    if (fields.includes(field.toLowerCase())) score += 4;
+  // Related fields match — +4 per match
+  program.relatedFields?.forEach((field) => {
+    if (fields.includes(field)) score += 4;
   });
 
-  // +1 for each interest that appears in related careers
-  program.relatedCareers.forEach((career) => {
-    interests.forEach((interest) => {
-      if (career.toLowerCase().includes(interest)) score += 1;
-    });
+  // Related careers match interests — +1 per match
+  program.relatedCareers?.forEach((career) => {
+    if (interests.some((i) => career.toLowerCase().includes(i.toLowerCase()))) {
+      score += 1;
+    }
   });
 
   return score;
 };
 
-/**
- * Main function: score all programs and return the top 10 IDs.
- */
-const generateRecommendations = async (profile) => {
-  try {
-    const allPrograms = await Program.find({});
+const generateRecommendations = async (profile, programs) => {
+  const scored = programs.map((program) => ({
+    program,
+    score: scoreProgram(program, profile),
+  }));
 
-    const scored = allPrograms
-      .map((program) => ({ program, score: scoreProgram(program, profile) }))
-      .filter((item) => item.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 10);
+  // Filter out programs with score 0
+  const filtered = scored.filter((item) => item.score > 0);
 
-    return scored.map((item) => item.program._id);
-  } catch (error) {
-    console.error('Recommendation engine error:', error.message);
-    return [];
-  }
+  // Sort by score descending
+  filtered.sort((a, b) => b.score - a.score);
+
+  // Return top 10
+  return filtered.slice(0, 10).map((item) => item.program);
 };
 
-module.exports = { generateRecommendations };
+module.exports = { generateRecommendations, scoreProgram };

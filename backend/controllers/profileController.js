@@ -20,13 +20,13 @@ const getProfile = async (req, res) => {
 // POST /api/profile
 const saveProfile = async (req, res) => {
   try {
-    const { interests, favoriteSubjects, preferredFields, careerGoals, preferredCity } = req.body;
+    const { interests, favoriteSubjects, preferredFields, careerGoals, preferredCity, stream } = req.body;
 
-    const profile = await Profile.findOneAndUpdate(
-      { user: req.user.id },
-      { interests, favoriteSubjects, preferredFields, careerGoals, preferredCity },
-      { new: true, upsert: true }
-    );
+   const profile = await Profile.findOneAndUpdate(
+  { user: req.user.id },
+  { interests, favoriteSubjects, preferredFields, careerGoals, preferredCity, stream },
+  { new: true, upsert: true }
+);
 
     // Run recommendation engine after saving
     const recommendedIds = await generateRecommendations(profile);

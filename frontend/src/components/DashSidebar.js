@@ -24,7 +24,7 @@ const DashSidebar = () => {
     <aside className="cp-dash-sidebar">
       {/* Logo */}
       <div className="cp-dash-sidebar-logo">
-        <img src={logo} alt="Career Pathway" />
+        <img src={logo} alt="Career Pathway"  style={{ height: 170, width: "auto" }} />
       </div>
 
       {/* Divider */}

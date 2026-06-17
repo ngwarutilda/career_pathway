@@ -125,11 +125,16 @@
   border-radius: 20px;
 }
 
-/* Concours grid */
+/* Concours grid — masonry style */
 .cp-co-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 14px;
+}
+
+.cp-co-card {
+  flex: 1 1 calc(50% - 7px);
+  min-width: 280px;
 }
 
 /* Concours card */
@@ -143,11 +148,13 @@
   gap: 10px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   transition: box-shadow 0.2s, transform 0.2s;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cp-co-card:hover {
   box-shadow: 0 6px 20px rgba(47,62,117,0.1);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 /* Card header */
@@ -283,6 +290,7 @@
 
 @media (max-width: 960px) {
   .cp-co-grid { grid-template-columns: 1fr; }
+  .cp-co-grid.single { max-width: 100%; }
 }
 
 @media (max-width: 600px) {
