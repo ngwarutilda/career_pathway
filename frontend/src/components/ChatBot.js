@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import API from "../api/axios";
 import "./ChatBot.css";
 
 const ChatBot = () => {
@@ -22,19 +22,9 @@ const ChatBot = () => {
     setLoading(true);
 
     try {
-      const token = localStorage.getItem("token");
-      console.log("Token:", token);
-      console.log("Sending message:", input);
-
-      const { data } = await axios.post(
-        "http://localhost:5000/api/chat",
-        { message: input },
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-      console.log("Response:", data);
+      const { data } = await API.post("/chat", { message: input });
       setMessages((prev) => [...prev, { role: "bot", text: data.reply }]);
     } catch (error) {
-      console.log("Error:", error.response?.data || error.message);
       setMessages((prev) => [
         ...prev,
         { role: "bot", text: "Sorry, I am having trouble responding right now. Please try again." },
