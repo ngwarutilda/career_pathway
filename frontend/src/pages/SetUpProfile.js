@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import "./SetUpProfile.css";
 
 const LEVELS = ["Secondary School", "High School", "Undergraduate", "Graduate"];
+const STREAMS = ["Science", "Arts", "Commercial", "Technical"];
 const SUBJECTS = ["Mathematics", "Physics", "Chemistry", "Biology", "English Language", "History", "Economics", "Geography", "Further Mathematics", "Computer Science", "Accounting", "Government", "Literature"];
 const FIELDS = ["Science", "Technology", "Arts", "Medicine", "Engineering", "Business", "Law", "Agriculture", "Health", "Finance"];
 const LOCATIONS = ["Yaounde", "Douala", "Buea", "Ngaoundere", "Bamenda", "Dschang", "Maroua"];
@@ -37,6 +38,7 @@ const SetupProfile = () => {
 
   // Step 1
   const [level, setLevel] = useState("");
+  const [stream, setStream] = useState("");
   const [subjects, setSubjects] = useState([]);
   const [fields, setFields] = useState([]);
 
@@ -58,11 +60,11 @@ const SetupProfile = () => {
       await saveProfile({
         favoriteSubjects: subjects,
         preferredFields: fields,
-        interests: fields, // use fields as interests too
+        interests: fields,
         careerGoals: careerGoals,
         preferredCity: locations[0] || "",
+        stream: stream,
       });
-      // Mark profile as completed in context
       loginUser(localStorage.getItem('token'), { ...user, profileCompleted: true });
       navigate("/dashboard");
     } catch (err) {
@@ -108,6 +110,21 @@ const SetupProfile = () => {
                   <option value="">Select your current level</option>
                   {LEVELS.map((l) => <option key={l} value={l}>{l}</option>)}
                 </select>
+              </div>
+
+              {/* Stream */}
+              <div className="cp-sp-group">
+                <span className="cp-sp-group-label">Your Stream / Series</span>
+                <div className="cp-sp-options">
+                  {STREAMS.map((s) => (
+                    <Chip
+                      key={s}
+                      label={s}
+                      selected={stream === s}
+                      onClick={() => setStream(s)}
+                    />
+                  ))}
+                </div>
               </div>
 
               {/* Subjects */}
